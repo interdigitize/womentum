@@ -6,6 +6,7 @@ $( document ).ready(function() {
 
   var people = ["Susan Wojcicki", "Genevieve Bell", "Sheryl Sandberg"];
   console.log("people + " + people);
+//call choose random person
  choosePerson();
 
 
@@ -16,21 +17,20 @@ $( document ).ready(function() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
+//choose random person
   function choosePerson(){
     var random_person = getRandomInt(0, 3);
     console.log("randomized integer " + random_person);
     return getPerson(random_person);
   }
 
-  getPerson(elem);
 
   function getPerson(elem){
     //encode str. there's an easier way with uriencode i think.
     //think google has a problem with this:
     //Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience."
     //it works tho
-    console.log("relem parameter " + elem)
-    console.log("people + " + people);
+    console.log("elem parameter " + elem)
     person = people[elem].split(" ").join("%20");
     console.log("randomized person " + person);
     var article_feed = {
@@ -42,32 +42,46 @@ $( document ).ready(function() {
 
     var imgLink;
     var imgLink2;
+    var random_article;
+    if(person === "Genevieve%20Bell"){
+      console.log("Gen");
+      //assign image to person
+      random_article = Math.random() < 0.5 ? 0 : 5;
+    }
+    else if (person === "Susan%20Wojcicki"){
+      console.log("Susan");
+      random_article = Math.random() < 0.5 ? 3 : 5;
+    }
+    else {
+      random_article = Math.random() < 0.5 ? 2 : 4;
+    }
+    console.log("This is random_article " + random_article);
 
     $.ajax(article_feed).done(function (response) {
-      var random_article = getRandomInt(0, 8);
       $( "#article_feed" ).attr( "href", response["documents"][random_article]["reference"]);
       imgLink = response["documents"][random_article]["reference"]; //HEREEEEE
-      imgLink2 = imgLink; //what is this for?
+      console.log("This is imgLink " + imgLink);
+      imgLink2 = imgLink;
     });
 
     console.log(imgLink);
 
-    getArticleImage();
+    // getArticleImage();
     extractText();
 
-    function getArticleImage(){
-      var article_image = {
-          "async": false,
-          "crossDomain": true,
-          "url": "http://api.diffbot.com/v3/image?token=69f2515921b7acd55e009b827228a3d2&url="+imgLink,
-          "method": "GET"
-        };
-      $.ajax(article_image).done(function (response) {
-        console.log(response["objects"][1]["url"]);
-        $( "#article_image" ).attr( "src", response["objects"][1]["url"]);
-        imgLink = "";
-      });
-    }
+    // function getArticleImage(){
+    //   var article_image = {
+    //       "async": false,
+    //       "crossDomain": true,
+    //       "url": "http://api.diffbot.com/v3/image?token=69f2515921b7acd55e009b827228a3d2&url="+imgLink,
+    //       "method": "GET"
+    //     };
+    //   $.ajax(article_image).done(function (response) {
+    //     console.log(response["objects"][1]["url"]);
+    //     $( "#article_image" ).attr( "src", response["objects"][1]["url"]);
+    //     imgLink = "";
+    //   });
+    // }
 
     function extractText(){
       var text_extract_description = {
