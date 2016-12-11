@@ -8,6 +8,7 @@ $( document ).ready(function() {
     };
 
     var imgLink = "";
+    var imgLink2;
 
 
     // var resized_image = {
@@ -21,6 +22,7 @@ $( document ).ready(function() {
     $.ajax(article_feed).done(function (response) {
       $( "#article_feed" ).attr( "href", response["documents"][5]["reference"]);
       imgLink = response["documents"][5]["reference"];
+      imgLink2 = imgLink;
     });
 
     console.log(imgLink);
@@ -43,4 +45,16 @@ $( document ).ready(function() {
     //   var url = "https://im.ages.io/" + response["response"]["id"]
     //   $( "#resized_image" ).attr("href", url);
     // });
+
+    var text_extract_description = {
+      "async": false,
+      "crossDomain": true,
+      "url": "https://api.havenondemand.com/1/api/sync/extracttext/v1?url=" + imgLink2 + "&apikey=42bde474-cd4c-4929-9dae-cf000db82f53",
+      "method": "GET"
+    }
+    console.log(text_extract_description["url"]);
+    $.ajax(text_extract_description).done(function (response) {
+      console.log(response["document"][0]["title"]);
+    });
+
 });
