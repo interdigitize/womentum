@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  <script src="https://use.fontawesome.com/98f47c70bc.js"></script>
+  <!-- <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script> -->
+
 
 </head>
 <body>
@@ -14,7 +17,7 @@
 <div class="mdl-layout mdl-js-layout background">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
-      <!-- Title -->    <img src="img/womentum.png" alt="Womentum">
+      <!-- Title -->    <img src="img/womentum.png" alt="Womentum" style="max-width:46px;">
 
       <span class="mdl-layout-title"></span>
       <!-- Add spacer, to align navigation to the right -->
@@ -25,7 +28,7 @@
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
           <img id="image-result" hidden>
-          <img id="article_image" src="">
+          <img id="article_image" class="img-responsive" src="">
 
         </div>
         <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--12-col-phone">
@@ -33,11 +36,12 @@
           <h1>Name</h1>
           <h3>Job, Company</h3>
           <p>description...</p>
-          <a id="article_feed">Read Article</a><br>
-          <p>Follow: </p><br>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            Opportunities
-          </button>
+          <p><a id="article_feed">Read Article</a></p>
+          <p>Follow: &nbsp;<i class="fa fa-lg fa-twitter" aria-hidden="true"></i>&nbsp; &nbsp;<i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></p><br>
+              <a href="https://www.youtube.com/yt/jobs/">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Opportunities</button>
+              </a>
+
         </div>
       </div>
     </main>
