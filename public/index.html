@@ -5,35 +5,13 @@
   <title></title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
 </head>
 <body>
-<style>
-.demo-layout-transparent {
-  /*background:*/
-}
 
-.bg {
-  content: "";
-  background: url('img/test.png') center / cover;
-  background-color: #000;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-  your background is light. */
-  color: white;
-}
-</style>
-
-<div class="demo-layout-transparent bg mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
       <!-- Title -->
@@ -44,8 +22,6 @@
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
       </nav>
     </div>
   </header>
@@ -54,13 +30,24 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Link</a>
       <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
+    <div class="background">
+      <a id="article_feed">Read Article</a>
+      <img id="article_image" src="">
+      <!-- <a id="resized_image">View Resized Image</a> -->
+      <div id="status"></div>
+      <img id="image-result" hidden>
+    </div>
   </main>
 </div>
+
+<!-- libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="popup.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
 <script>
 // Initialize Firebase

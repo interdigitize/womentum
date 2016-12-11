@@ -8,22 +8,10 @@
   <head>
     <title>Getting Started Extension's Popup</title>
     <style>
-      html{
-        height: 100%;
-      }
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
-        height:100%;
       }
-
-      .background{
-        background: #4568DC; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #4568DC , #B06AB3); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #4568DC , #B06AB3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        height:100%;
-      }
-
       #status {
         /* avoid an excessively wide status text */
         white-space: pre;
@@ -39,25 +27,10 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-
-       <!-- jQuery library -->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-       <!-- Latest compiled and minified CSS -->
-       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-       <!-- Latest compiled JavaScript -->
-       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-       <script src="script.js"></script>
-       <script src="popup.js"></script>
+    <script src="popup.js"></script>
   </head>
   <body>
-    <div class="background">
-      <a id="article_feed">Read Article</a>
-      <img id="article_image" src="">
-      <!-- <a id="resized_image">View Resized Image</a> -->
-      <div id="status"></div>
-      <img id="image-result" hidden>
-    </div>
+    <div id="status"></div>
+    <img id="image-result" hidden>
   </body>
 </html>
