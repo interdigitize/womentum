@@ -10,6 +10,13 @@
     "default_popup": "popup.html",
     "default_title": "Click here!"
   },
+
+  "chrome_settings_overrides": {
+    "homepage": "http://www.womentumdash.com",
+    "encoding": "UTF-8",
+    "is_default": true
+  },
+
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
