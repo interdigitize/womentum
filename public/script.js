@@ -5,7 +5,7 @@ $( document ).ready(function() {
   //ExtractText();
 
   var people = ["Susan Wojcicki", "Genevieve Bell", "Sheryl Sandberg"];
-  console.log("people + " + people);
+  // console.log("people + " + people);
 //call choose random person
   choosePerson();
 
@@ -20,7 +20,7 @@ $( document ).ready(function() {
 //choose random person
   function choosePerson(){
     var random_person = getRandomInt(0, 3);
-    console.log("randomized integer " + random_person);
+    // console.log("randomized integer " + random_person);
     return getPerson(random_person);
   }
 
@@ -30,7 +30,7 @@ $( document ).ready(function() {
     //think google has a problem with this:
     //Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user's experience."
     //it works tho
-    console.log("elem parameter " + elem)
+    // console.log("elem parameter " + elem)
     $("#name").append(people[elem]);
     if(elem === 0){
       $("#company").append("Chief Executive Officer, YouTube")
@@ -51,7 +51,7 @@ $( document ).ready(function() {
       $("#opportunities").attr( "href", "http://www.facebook.jobs/");
     }
     person = people[elem].split(" ").join("%20");
-    console.log("randomized person " + person);
+    // console.log("randomized person " + person);
     var article_feed = {
         "async": false,
         "crossDomain": true,
@@ -64,14 +64,14 @@ $( document ).ready(function() {
     var random_article;
     var person_image;
     if(person === "Genevieve%20Bell"){
-      console.log("Gen");
+      // console.log("Gen");
       //assign article to person
       random_article = Math.random() < 0.5 ? 0 : 5;
       //assign image path to person
       person_image = "img/genevieve-bell.jpg";
     }
     else if (person === "Susan%20Wojcicki"){
-      console.log("Susan");
+      // console.log("Susan");
       random_article = Math.random() < 0.5 ? 3 : 5;
       person_image = "img/susan-wojcicki.jpg";
     }
@@ -82,27 +82,27 @@ $( document ).ready(function() {
     }
 
     if(person === "Genevieve%20Bell"){
-      console.log("Gen");
+      // console.log("Gen");
       //assign image to person
       random_article = Math.random() < 0.5 ? 0 : 5;
     }
     else if (person === "Susan%20Wojcicki"){
-      console.log("Susan");
+      // console.log("Susan");
       random_article = Math.random() < 0.5 ? 3 : 5;
     }
     else {
       random_article = Math.random() < 0.5 ? 2 : 4;
     }
-    console.log("This is random_article " + random_article);
+    // console.log("This is random_article " + random_article);
 
     $.ajax(article_feed).done(function (response) {
       $( "#article_feed" ).attr( "href", response["documents"][random_article]["reference"]);
       imgLink = response["documents"][random_article]["reference"]; //HEREEEEE
-      console.log("This is imgLink " + imgLink);
+      // console.log("This is imgLink " + imgLink);
       imgLink2 = imgLink;
     });
 
-    console.log(imgLink);
+    // console.log(imgLink);
 
     getArticleImage();
     extractText();
@@ -134,7 +134,7 @@ $( document ).ready(function() {
       };
 
       $.ajax(text_extract_description).done(function (response) {
-        console.log(response["document"][0]["title"]);
+        // console.log(response["document"][0]["title"]);
         $("#article_description").append(response["document"][0].description);
       });
     }
