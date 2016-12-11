@@ -59,7 +59,7 @@ $( document ).ready(function() {
       var article_image = {
           "async": false,
           "crossDomain": true,
-          "url": "http://api.diffbot.com/v3/image?token=69f2515921b7acd55e009b827228a3d2&url="+imgLink,
+          "url": "https://api.diffbot.com/v3/image?token=69f2515921b7acd55e009b827228a3d2&url="+imgLink,
           "method": "GET"
         };
       $.ajax(article_image).done(function (response) {
