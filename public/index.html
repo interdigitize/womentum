@@ -5,62 +5,49 @@
   <title></title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
 </head>
 <body>
-<style>
-.demo-layout-transparent {
-  /*background:*/
-}
 
-.bg {
-  content: "";
-  background: url('img/test.png') center / cover;
-  background-color: #000;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-  your background is light. */
-  color: white;
-}
-</style>
-
-<div class="demo-layout-transparent bg mdl-layout mdl-js-layout">
+<div class="mdl-layout mdl-js-layout background">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
+      <!-- Title -->    <img src="img/womentum.png" alt="Womentum">
+
+      <span class="mdl-layout-title"></span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation -->
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-      </nav>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-  </main>
+    <main>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+          <img id="image-result" hidden>
+          <img id="article_image" src="">
+
+        </div>
+        <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--12-col-phone">
+          <!-- <a id="resized_image">View Resized Image</a> -->
+          <h1>Name</h1>
+          <h3>Job, Company</h3>
+          <p>description...</p>
+          <a id="article_feed">Read Article</a><br>
+          <p>Follow: </p><br>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Opportunities
+          </button>
+        </div>
+      </div>
+    </main>
 </div>
+
+<!-- libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="script.js"></script>
+<script src="popup.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
 <script>
 // Initialize Firebase
