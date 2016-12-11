@@ -10,7 +10,6 @@
   <script src="https://use.fontawesome.com/98f47c70bc.js"></script>
   <!-- <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script> -->
 
-
 </head>
 <body>
 
@@ -33,15 +32,20 @@
         </div>
         <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--12-col-phone">
           <!-- <a id="resized_image">View Resized Image</a> -->
-          <h1>Name</h1>
-          <h3>Job, Company</h3>
-          <p>description...</p>
-          <p><a id="article_feed">Read Article</a></p>
-          <p>Follow: &nbsp;<i class="fa fa-lg fa-twitter" aria-hidden="true"></i>&nbsp; &nbsp;<i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></p><br>
-              <a href="https://www.youtube.com/yt/jobs/">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Opportunities</button>
-              </a>
+          <h1 id="name"></h1>
+          <h3 id="company"></h3>
+          <p id="article_description"></p>
+          <a id="article_feed" target="_blank">Read Article</a><br>
 
+          <p>Follow: &nbsp;
+            <a id="twitter" target="_blank"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>&nbsp; &nbsp;
+            <a id="linkedin" target="_blank"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a></p><br>
+
+          <a id="opportunities" target="_blank">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Opportunities
+          </button>
+        </a>
         </div>
       </div>
     </main>
