@@ -69,6 +69,7 @@ $( document ).ready(function() {
     // getArticleImage();
     extractText();
 
+
     // function getArticleImage(){
     //   var article_image = {
     //       "async": false,
@@ -82,6 +83,7 @@ $( document ).ready(function() {
     //     imgLink = "";
     //   });
     // }
+
 
     function extractText(){
       var text_extract_description = {
