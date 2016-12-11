@@ -27,9 +27,22 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-    <script src="popup.js"></script>
+
+       <!-- jQuery library -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+       <!-- Latest compiled and minified CSS -->
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+       <!-- Latest compiled JavaScript -->
+       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+       <script src="script.js"></script>
+       <script src="popup.js"></script>
   </head>
   <body>
+    <a id="article_feed">Read Article</a>
+    <a id="article_image">View Image</a>
+    <a id="resized_image">View Resized Image</a>
     <div id="status"></div>
     <img id="image-result" hidden>
   </body>
